@@ -1,0 +1,6 @@
+brew "gh"
+brew "git"
+brew "mise"
+brew "stow"
+cask "claude"
+cask "github"
