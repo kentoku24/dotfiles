@@ -25,20 +25,38 @@ code --list-extensions > ~/dotfiles/vscode_extensions.txt
 git add .
 git commit -m "Update environment: $(date +%Y-%m-%d)"
 git push origin main
+```
 
+---
 
+## 2. 新環境でのセットアップ
 
-# 新環境での手順
+### Xcode Command Line Tools のインストール
 
-## Xcode Command Line Tools のインストール（ポップアップが出たら「インストール」をクリック）
+ポップアップが出たら「インストール」をクリックします。
+
+```bash
 xcode-select --install
+```
 
-## Homebrew のインストール
+### Homebrew のインストール
 
-## Homebrew のパスを一時的に通す（まだdotfilesがないため）
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Homebrew のパスを一時的に通す
+
+まだ dotfiles がないため、手動でパスを通します。
+
+```bash
 eval "$(/opt/homebrew/bin/brew shellenv)"
+```
 
+### 必要なツールのインストールとリポジトリのクローン
+
+```bash
 brew install git mise stow
 
-git clone [https://github.com/kentoku24/dotfiles.git](https://github.com/kentoku24/dotfiles.git) ~/dotfiles
-
+git clone https://github.com/kentoku24/dotfiles.git ~/dotfiles
+```
